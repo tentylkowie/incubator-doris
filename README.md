@@ -17,6 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
+# DUMMY CHANGE
+
 # Apache Doris (incubating)
 [![Join the chat at https://gitter.im/apache-doris/Lobby](https://badges.gitter.im/apache-doris/Lobby.svg)](https://gitter.im/apache-doris/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
