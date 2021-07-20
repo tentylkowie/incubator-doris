@@ -1,0 +1,3 @@
+[submodule ".github/actions/label-when-approved-action"]
+	path = .github/actions/label-when-approved-action
+	url = https://github.com/TobKed/label-when-approved-action

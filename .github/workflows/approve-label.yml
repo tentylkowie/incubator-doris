@@ -15,8 +15,13 @@ jobs:
       isApprovedByCommiters: ${{ steps.label-when-approved-by-commiters.outputs.isApproved }}
       isApprovedByAnyone: ${{ steps.label-when-approved-by-anyone.outputs.isApproved }}
     steps:
+      - name: "Checkout ${{ github.ref }} ( ${{ github.sha }} )"
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          submodules: recursive
       - name: Label when approved by commiters
-        uses: TobKed/label-when-approved-action@v1.3
+        uses: ./.github/actions/label-when-approved-action
         id: label-when-approved-by-commiters
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -25,10 +30,9 @@ jobs:
           remove_label_when_approval_missing: 'true'
           comment: 'PR approved by at least one committer and no changes requested.'
       - name: Label when approved by anyone
-        uses: TobKed/label-when-approved-action@v1.3
+        uses: ./.github/actions/label-when-approved-action
         id: label-when-approved-by-anyone
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           label: 'reviewed'
           comment: 'PR approved by anyone and no changes requested.'
-
