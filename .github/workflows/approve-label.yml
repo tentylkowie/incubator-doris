@@ -1,5 +1,8 @@
-name: Label when approved
-on: pull_request_review
+name: Label when approved workflow run
+on:
+  workflow_run:
+    workflows: ["Label when reviewed"]
+    types: ['requested']
 permissions:
   # All other permissions are set to none
   checks: write
